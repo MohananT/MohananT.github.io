@@ -18,8 +18,10 @@ _getDBContents().then(res => {
     let li = document.createElement("li");
     li.innerHTML = `<div class="collapsible-header">${item.ReservoirName}</div>
     <div class="collapsible-body">
-      <div>Capacity: ${item.Capacity}</div>
-      <div>Status: ${item.StatusValue}</div>
+      <div class="row">
+        <div class="col s6"><div> <i class="material-icons">add</i> Capacity : ${item.Capacity}</div></div>
+        <div class="col s6"><div>Water available : ${item.StatusValue}%</div></div>
+      </div>
     </div>`;
     selector.appendChild(li);
   });
