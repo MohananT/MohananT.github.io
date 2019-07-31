@@ -1,11 +1,23 @@
+nav{
+    height: 10vh;
+    background:  #FFE9D2;
+    border-bottom: 10px solid #FFE1C4;
+}
+
 .nav-wrapper a{
     padding: 0 10px;
 }
 
-/* defining heights */
-header {
- height: 10vh;
+nav a{
+    color: #FF8816 !important;
+    font-size: 180%;
 }
+
+footer a{
+    color: #FF8816 !important;
+}
+
+/* defining heights */
 
 main {
     height: 84vh;
@@ -17,5 +29,7 @@ footer {
 
 .page-footer {
     padding-top: 10px !important;
+    background:  #FFE9D2;
+    color: #FF8816 !important;
 }
 
