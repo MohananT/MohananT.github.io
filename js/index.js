@@ -15,17 +15,46 @@ _getDBContents().then(res => {
   console.log("selector", selector);
 
   items.forEach(item => {
-    let li = document.createElement("li");
-    li.innerHTML = `<div class="collapsible-header">${item.ReservoirName}</div>
-    <div class="collapsible-body">
-      <div class="row">
-        <div class="col s6"><div> <i class="material-icons">add</i> Capacity : ${item.Capacity}</div></div>
-        <div class="col s6"><div>Water available : ${item.StatusValue}%</div></div>
+    let div = document.createElement("div");
+    div.innerHTML = `<div class="col s12 col m4 box">
+    <div class="row">
+      <div class="col s6">
+        <b>Reservoir :</b>
       </div>
-    </div>`;
-    selector.appendChild(li);
-  });
+      <div class="col s6">
+        <i>${item.ReservoirName}</i>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col s6">
+        <b>Capacity (liters):</b>
+      </div>
+      <div class="col s6">
+        <i>${item.Capacity}</i>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6">
+        <b>Location :</b>
+      </div>
+      <div class="col s6">
+        <i>${item.Location}</i>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6">
+        <b>Current Status (%):</b>
+      </div>
+      <div class="col s6">
+        <i>${item.StatusValue}</i>
+      </div>
+    </div>
+  </div>`;
+    selector.appendChild(div);
+  });
 });
 
 $(document).ready(function() {
