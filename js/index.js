@@ -60,3 +60,27 @@ _getDBContents().then(res => {
 $(document).ready(function() {
   $(".collapsible").collapsible();
 });
+
+//function that gets the location and returns it
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var location = {
+        longitude: position.coords.longitude,
+        latitude: position.coords.latitude
+      };
+      console.log(location);
+
+      let locSelector = document.querySelector(".location");
+      let loc = document.createElement("div");
+      loc.innerHTML = location.longitude;
+      locSelector.appendChild(loc);
+    });
+  } else {
+    console.log("Geo Location not supported by browser");
+  }
+}
+
+//request for location
+
+getLocation();
